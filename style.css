@@ -42,7 +42,7 @@ body {
 
 
 /* ========================================= */
-/* ESTILOS BASE (PC/DEFAULT) */
+/* ESTILOS BASE (PC/DEFAULT - 3 FOTOS POR VEZ) */
 /* ========================================= */
 .cabecalho { text-align: center; padding: 40px 20px; background-color: #fff; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; z-index: 10; position: relative;
@@ -61,7 +61,7 @@ section h2 { color: #d81b60; font-family: 'Quicksand', sans-serif; font-weight: 
 .foto-item { min-width: 33.3333%; flex-shrink: 0; padding: 5px; box-sizing: border-box; }
 .foto-slideshow { width: 100%; height: 400px; object-fit: cover; display: block; border-radius: 8px; transition: box-shadow 0.3s ease-in-out; }
 
-/* Botões */
+/* Botões (Inalterados) */
 .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(233, 30, 99, 0.7); color: white; border: none; padding: 10px 15px; font-size: 1.5rem; cursor: pointer; z-index: 10; border-radius: 50%; transition: background-color 0.3s, transform 0.1s; line-height: 1; }
 .carousel-btn:hover { background: #e91e63; transform: translateY(-50%) scale(1.1); }
 .prev-btn { left: 10px; } .next-btn { right: 10px; }
@@ -75,57 +75,55 @@ section h2 { color: #d81b60; font-family: 'Quicksand', sans-serif; font-weight: 
 /* Rodapé */
 .rodape { text-align: center; padding: 20px 0; color: #aaa; font-size: 0.9rem; position: relative; z-index: 10; }
 
+/* Chuva de Corações (Inalterado) */
+#heart-rain-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; overflow: hidden; z-index: 1; }
+.heart { position: absolute; color: #e91e63; font-size: 24px; animation: cair ease-in infinite; }
+@keyframes cair { 0% { transform: translateY(-100px) rotateZ(0deg); opacity: 0.8; } 100% { transform: translateY(100vh) rotateZ(360deg); opacity: 0; } }
+
 
 /* ================================================================= */
 /* MEDIA QUERIES: CORREÇÃO DE RESPONSIVIDADE PARA TELAS PEQUENAS (CELULAR) */
 /* ================================================================= */
 @media (max-width: 850px) {
-    /* Esconde o texto flutuante completamente */
+    /* Esconde o texto flutuante (que não cabe no celular) */
     .texto-flutuante {
         display: none;
     }
     
-    /* Centraliza o container e remove padding desnecessário */
+    /* Adapta o Container */
     .container {
         max-width: 100%;
         margin: 15px 0;
         padding: 0 10px;
     }
 
-    /* Títulos e cabeçalhos menores */
-    .cabecalho h1 {
-        font-size: 3rem; /* Título principal menor */
-    }
-
-    /* Contador */
-    .contador-tempo {
-        font-size: 1.2rem;
-    }
-
-    /* Carrossel (Visão Celular: 1 foto) */
+    /* Reduz o Carrossel para 1 foto por vez */
     .foto-item {
         min-width: 100%; /* CRUCIAL: Mostra apenas uma foto por vez */
         padding: 2px;
     }
 
     .foto-slideshow {
-        height: 350px; /* Reduz um pouco a altura para caber melhor na tela */
+        height: 350px; /* Altura reduzida para melhor visualização na vertical */
     }
 
-    .carousel-btn {
-        padding: 8px 12px; /* Botões menores */
+    /* Reduz o padding das seções para aproveitar espaço */
+    section {
+        padding: 20px;
+    }
+
+    /* Reduz botões e textos para mobile */
+    .cabecalho h1 {
+        font-size: 3rem; 
+    }
+    .contador-tempo {
         font-size: 1.2rem;
-        background: rgba(233, 30, 99, 0.9); /* Mais opaco para visibilidade */
+    }
+    .carousel-btn {
+        padding: 8px 12px;
+        font-size: 1.2rem;
+        background: rgba(233, 30, 99, 0.9);
     }
     .prev-btn { left: 5px; }
     .next-btn { right: 5px; }
-
-    /* Pop-up */
-    .titulo-romantico {
-        font-size: 2rem;
-    }
-    .btn-iniciar {
-        padding: 15px 30px;
-        font-size: 1.2rem;
-    }
 }
