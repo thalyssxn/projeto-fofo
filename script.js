@@ -2,7 +2,7 @@
 // 1. DATA DE INÍCIO DO RELACIONAMENTO (CONFIGURADA)
 // 02 de Fevereiro de 2024, 22:00:00
 // =========================================================
-const dataInicio = new Date(2024, 1, 2, 22, 0, 0); 
+const dataInicio = new Date(2024, 1, 8, 22, 0, 0); 
 
 // =========================================================
 // ⚠️ 2. LISTE OS NOMES DOS SEUS ARQUIVOS DE FOTOS AQUI!
