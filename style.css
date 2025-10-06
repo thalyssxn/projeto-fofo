@@ -104,7 +104,9 @@ section h2 { color: #d81b60; font-family: 'Quicksand', sans-serif; font-weight: 
     }
 
     .foto-slideshow {
-        height: 350px; /* Altura reduzida para melhor visualização na vertical */
+        /* CORREÇÃO: Usar a altura baseada na largura da tela para evitar cortes */
+        /* Isso faz a foto ser alta o suficiente para preencher, mas não exagerada */
+        height: 70vw; /* 70% da largura da tela do celular, adaptando a altura */
     }
 
     /* Reduz o padding das seções para aproveitar espaço */
