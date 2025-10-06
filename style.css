@@ -20,114 +20,112 @@ body {
 /* ESTILOS DO POP-UP SIMPLES */
 /* ============================== */
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.98); /* Fundo quase opaco */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    transition: opacity 0.8s ease, visibility 0.8s;
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(255, 255, 255, 0.98);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 1000; transition: opacity 0.8s ease, visibility 0.8s;
 }
-
-.overlay.escondido {
-    opacity: 0;
-    pointer-events: none;
-    visibility: hidden;
-}
-
+.overlay.escondido { opacity: 0; pointer-events: none; visibility: hidden; }
 .boasVindasConteudo {
-    text-align: center;
-    padding: 40px;
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    text-align: center; padding: 40px; background-color: #fff;
+    border-radius: 15px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
-
 .titulo-romantico {
-    font-family: 'Pacifico', cursive; /* Fonte super romântica */
-    color: #e91e63;
-    font-size: 3rem; /* Tamanho maior e mais fofo */
-    margin-bottom: 25px;
+    font-family: 'Pacifico', cursive; color: #e91e63; font-size: 3rem; margin-bottom: 25px;
 }
-
 .btn-iniciar {
-    background-color: #f06292; 
-    color: white;
-    border: 3px solid #d81b60; /* Borda dupla */
-    padding: 18px 35px;
-    font-size: 1.4rem; /* Maior e mais fácil de ver */
-    font-weight: 700;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.1s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f06292; color: white; border: 3px solid #d81b60; 
+    padding: 18px 35px; font-size: 1.4rem; font-weight: 700; border-radius: 50px;
+    cursor: pointer; transition: background-color 0.3s, transform 0.1s; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
-.btn-iniciar:hover {
-    background-color: #e91e63;
-    transform: scale(1.05);
-}
+.btn-iniciar:hover { background-color: #e91e63; transform: scale(1.05); }
 
 
 /* ========================================= */
-/* AJUSTES NO CONTEÚDO PRINCIPAL */
+/* ESTILOS BASE (PC/DEFAULT) */
 /* ========================================= */
-.cabecalho {
-    text-align: center; padding: 40px 20px; background-color: #fff; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.cabecalho { text-align: center; padding: 40px 20px; background-color: #fff; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; z-index: 10; position: relative;
 }
 
-.cabecalho h1 {
-    font-family: 'Pacifico', cursive; 
-    color: #e91e63; 
-    font-size: 4.5rem; /* Ajuste final do tamanho */
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-}
-
+.cabecalho h1 { font-family: 'Pacifico', cursive; color: #e91e63; font-size: 4.5rem; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
 .cabecalho p { font-size: 1.3rem; color: #888; }
-
 .container { max-width: 800px; margin: 30px auto; padding: 0 20px; z-index: 10; position: relative; }
-
 section { background-color: #fff; padding: 30px; border-radius: 15px; margin-bottom: 25px; box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08); z-index: 10; position: relative; }
-
 section h2 { color: #d81b60; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 1.8rem; margin-bottom: 15px; border-bottom: 2px solid #f8bbd0; padding-bottom: 5px; }
-
 .contador-tempo strong { color: #e91e63; }
 
-
-/* ========================================= */
-/* CHUVA DE CORAÇÕES */
-/* ========================================= */
-#heart-rain-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; overflow: hidden; z-index: 1; }
-.heart { position: absolute; color: #e91e63; font-size: 24px; animation: cair ease-in infinite; }
-@keyframes cair {
-    0% { transform: translateY(-100px) rotateZ(0deg); opacity: 0.8; }
-    100% { transform: translateY(100vh) rotateZ(360deg); opacity: 0; }
-}
-
-/* TEXTO FLUTUANTE (Posicionamento e Movimento) */
-.texto-flutuante { position: absolute; top: 50%; width: 200px; font-size: 0.9rem; color: rgba(74, 74, 74, 0.4); z-index: 5; padding: 10px; animation: flutuar 30s ease-in-out infinite alternate; }
-.lado-esquerdo { left: 50%; margin-left: -600px; }
-.lado-direito { left: 50%; margin-left: 400px; }
-@media (max-width: 1200px) { .texto-flutuante { display: none; } }
-@keyframes flutuar {
-    0% { transform: translateY(-40%) translateX(0); }
-    100% { transform: translateY(-60%) translateX(0); }
-}
-
-/* --- CARROSSEL DE FOTOS --- */
+/* Carrossel (Visão PC: 3 fotos) */
 .carousel-container { position: relative; overflow: hidden; border-radius: 10px; border: 4px solid #f8bbd0; }
 .carousel-track { display: flex; transition: transform 0.5s ease-in-out; }
 .foto-item { min-width: 33.3333%; flex-shrink: 0; padding: 5px; box-sizing: border-box; }
 .foto-slideshow { width: 100%; height: 400px; object-fit: cover; display: block; border-radius: 8px; transition: box-shadow 0.3s ease-in-out; }
+
+/* Botões */
 .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(233, 30, 99, 0.7); color: white; border: none; padding: 10px 15px; font-size: 1.5rem; cursor: pointer; z-index: 10; border-radius: 50%; transition: background-color 0.3s, transform 0.1s; line-height: 1; }
 .carousel-btn:hover { background: #e91e63; transform: translateY(-50%) scale(1.1); }
 .prev-btn { left: 10px; } .next-btn { right: 10px; }
 
-/* --- RODAPÉ --- */
+/* Texto Flutuante (Visão PC) */
+.texto-flutuante { position: absolute; top: 50%; width: 200px; font-size: 0.9rem; color: rgba(74, 74, 74, 0.4); z-index: 5; padding: 10px; animation: flutuar 30s ease-in-out infinite alternate; }
+.lado-esquerdo { left: 50%; margin-left: -600px; }
+.lado-direito { left: 50%; margin-left: 400px; }
+@keyframes flutuar { 0% { transform: translateY(-40%) translateX(0); } 100% { transform: translateY(-60%) translateX(0); } }
+
+/* Rodapé */
 .rodape { text-align: center; padding: 20px 0; color: #aaa; font-size: 0.9rem; position: relative; z-index: 10; }
+
+
+/* ================================================================= */
+/* MEDIA QUERIES: CORREÇÃO DE RESPONSIVIDADE PARA TELAS PEQUENAS (CELULAR) */
+/* ================================================================= */
+@media (max-width: 850px) {
+    /* Esconde o texto flutuante completamente */
+    .texto-flutuante {
+        display: none;
+    }
+    
+    /* Centraliza o container e remove padding desnecessário */
+    .container {
+        max-width: 100%;
+        margin: 15px 0;
+        padding: 0 10px;
+    }
+
+    /* Títulos e cabeçalhos menores */
+    .cabecalho h1 {
+        font-size: 3rem; /* Título principal menor */
+    }
+
+    /* Contador */
+    .contador-tempo {
+        font-size: 1.2rem;
+    }
+
+    /* Carrossel (Visão Celular: 1 foto) */
+    .foto-item {
+        min-width: 100%; /* CRUCIAL: Mostra apenas uma foto por vez */
+        padding: 2px;
+    }
+
+    .foto-slideshow {
+        height: 350px; /* Reduz um pouco a altura para caber melhor na tela */
+    }
+
+    .carousel-btn {
+        padding: 8px 12px; /* Botões menores */
+        font-size: 1.2rem;
+        background: rgba(233, 30, 99, 0.9); /* Mais opaco para visibilidade */
+    }
+    .prev-btn { left: 5px; }
+    .next-btn { right: 5px; }
+
+    /* Pop-up */
+    .titulo-romantico {
+        font-size: 2rem;
+    }
+    .btn-iniciar {
+        padding: 15px 30px;
+        font-size: 1.2rem;
+    }
+}
